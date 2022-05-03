@@ -27,6 +27,7 @@ describe('empji is visible', () => {
         const { getByLabelText } = render(<Nav/>);
 
         // Assert
+        // eslint-disable-next-line testing-library/prefer-screen-queries
         expect(getByLabelText('camera')).toHaveTextContent('📸')
     })
 });
@@ -37,7 +38,9 @@ describe('links are visible', () => {
         const { getByTestId } = render(<Nav/>);
 
         // Assert
+        // eslint-disable-next-line testing-library/prefer-screen-queries
         expect(getByTestId('link')).toHaveTextContent('Oh Snap!');
+        // eslint-disable-next-line testing-library/prefer-screen-queries
         expect(getByTestId('about')).toHaveTextContent('About me');
     })
 });
