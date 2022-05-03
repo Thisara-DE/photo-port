@@ -7,9 +7,9 @@ import About from './components/About';
 function App() {
   return (
     <div>
-      <main>
-        <Nav></Nav>
-        <About></About>
+      <Nav/>
+      <main>        
+        <About/>
       </main>
     </div>
   );
