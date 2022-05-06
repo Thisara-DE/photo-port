@@ -9,6 +9,8 @@ const categories = [
 
 const mockCurrentCategory = jest.fn();
 const mockSetCurrentCategory = jest.fn(); 
+const mockContactSelected = jest.fn();
+const mockSetContactSelected = jest.fn();
 
 afterEach(cleanup);
 
@@ -23,11 +25,14 @@ describe('NAV component', () => {
             categories={categories}
             setCurrentCategory={mockCurrentCategory}
             currentCategory={mockSetCurrentCategory}
+            contactSelected={mockContactSelected}
+            setContactSelected={mockSetContactSelected}
         />);
     });
     // snapshot test
     it('matches snapshot', () => {
-        const { asFragment } = render(<Nav categories={categories} setCurrentCategory={mockCurrentCategory} currentCategory={mockSetCurrentCategory} />);
+        const { asFragment } = render(<Nav categories={categories} setCurrentCategory={mockCurrentCategory} currentCategory={mockSetCurrentCategory} contactSelected={mockContactSelected}
+            setContactSelected={mockSetContactSelected} />);
 
         // assert value comparison
         expect(asFragment()).toMatchSnapshot();
@@ -37,7 +42,8 @@ describe('NAV component', () => {
 describe('empji is visible', () => {
     it('inserts emoji into the h2', () => {
         // Arrange
-        const { getByLabelText } = render(<Nav categories={categories} setCurrentCategory={mockCurrentCategory} currentCategory={mockSetCurrentCategory} />);
+        const { getByLabelText } = render(<Nav categories={categories} setCurrentCategory={mockCurrentCategory} currentCategory={mockSetCurrentCategory} contactSelected={mockContactSelected}
+            setContactSelected={mockSetContactSelected} />);
 
         // Assert
         // eslint-disable-next-line testing-library/prefer-screen-queries
@@ -48,7 +54,8 @@ describe('empji is visible', () => {
 describe('links are visible', () => {
     it('inserts text into the links', () => {
         // Arrange
-        const { getByTestId } = render(<Nav categories={categories} setCurrentCategory={mockCurrentCategory} currentCategory={mockSetCurrentCategory} />);
+        const { getByTestId } = render(<Nav categories={categories} setCurrentCategory={mockCurrentCategory} currentCategory={mockSetCurrentCategory} contactSelected={mockContactSelected}
+            setContactSelected={mockSetContactSelected} />);
 
         // Assert
         // eslint-disable-next-line testing-library/prefer-screen-queries
