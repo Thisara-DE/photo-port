@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 
-function Modal({currentPhoto}) {
+function Modal({currentPhoto, onClose}) {
 
     const { name, category, description, index } = currentPhoto;
 
@@ -18,7 +18,7 @@ function Modal({currentPhoto}) {
                     {description}
                 </p>
 
-                <button type='button'> Close this modal</button>
+                <button onClick={onClose} type='button'> Close </button>
             </div>
         </div>
     )
